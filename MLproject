@@ -4,4 +4,6 @@ conda_env: conda.yaml
 
 entry_points:
   main:
-    command: "python3 train.py"
+    parameters:
+        n_estimators: {type: int, default: 100}
+    command: "python3 train.py {n_estimators}"
