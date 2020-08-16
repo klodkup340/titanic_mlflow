@@ -56,7 +56,7 @@ def log_mlflow(model):
 
     # Logging training dataset to artifacts
     tempdir = tempfile.mkdtemp()
-    with open(os.path.join(tempdir, 'data.pkl'), 'wb') as t:
+    with open (os.path.join(tempdir, 'data.pkl'), 'wb') as t:
       pickle.dump({'train_X': train_X, 'train_Y': train_Y, 'test_X': test_X, 'test_Y': test_Y}, t)
     
     mlflow.log_artifact(os.path.join(tempdir, 'data.pkl'), 'training_dataset')
